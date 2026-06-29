@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses & Pricing — Interface Software Academy</title>
+  <meta name="description"
+    content="Explore Interface Software Academy's specialized Java courses: Java Core, Java + Spring, and Java + AI. Transparent pricing with live sessions, mentorship, and career support.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%236C63FF'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='18' font-weight='bold' font-family='sans-serif'>ISA</text></svg>">
+</head>
+
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <div class="navbar__logo-icon">ISA</div>
+        Interface<span>Software</span>
+      </a>
+
+      <div class="navbar__links" id="navLinks">
+        <a href="index.html" class="navbar__link">Home</a>
+        <a href="about.html" class="navbar__link">About</a>
+        <a href="courses.html" class="navbar__link active">Courses</a>
+        <a href="index.html#contact" class="navbar__link">Contact</a>
+
+        <!-- <div class="navbar__actions-mobile">
+          <a href="#" class="btn btn--outline btn--small">Login</a>
+          <a href="#" class="btn btn--primary btn--small">Register</a>
+        </div> -->
+      </div>
+
+      <div class="navbar__actions">
+        <a href="#" class="btn btn--primary btn--small">Enrol Now</a>
+      </div>
+
+      <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav-overlay" id="navOverlay"></div>
+
+
+  <!-- ═══════════════ COURSES PAGE ═══════════════ -->
+  <div id="courses" class="page">
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+      <div class="container">
+        <!-- <span class="section-eyebrow">// Pick your path</span> -->
+        <h1 class="page-hero__title">Courses & Pricing</h1>
+        <p class="page-hero__subtitle">Transparent pricing. No hidden fees. Every plan includes live sessions,
+          mentorship, and a career support package.</p>
+      </div>
+    </div>
+
+    <div class="courses-content">
+
+      <!-- Billing Toggle -->
+      <div class="plan-toggle">
+        <span class="toggle-label active" id="toggleMonthly">Monthly</span>
+        <div class="toggle-wrap" id="billingToggle">
+          <div class="toggle-knob"></div>
+        </div>
+        <span class="toggle-label" id="toggleYearly">Yearly</span>
+        <span class="save-badge">Save 30%</span>
+      </div>
+
+      <!-- Plans Grid -->
+      <div class="plans-grid">
+
+        <!-- ===== Starter — Java Core ===== -->
+        <div class="plan-card reveal reveal-delay-1">
+          <div class="plan-name">Starter</div>
+          <div class="plan-title">Java Core</div>
+          <div class="plan-price">
+            <span class="price-currency">₹</span>
+            <span class="price-num" data-monthly="4,999" data-yearly="3,499">4,999</span>
+            <span class="price-period">/month</span>
+          </div>
+          <p class="plan-desc">Perfect if you're starting fresh with zero prior coding experience. Build a rock-solid
+            Java foundation.</p>
+          <div class="plan-divider"></div>
+          <ul class="plan-features">
+            <li><span class="feat-icon">✓</span>Java syntax & OOP fundamentals</li>
+            <li><span class="feat-icon">✓</span>Collections, generics & exceptions</li>
+            <li><span class="feat-icon">✓</span>File I/O and basic data structures</li>
+            <li><span class="feat-icon">✓</span>2 live projects on GitHub</li>
+            <li><span class="feat-icon">✓</span>Certificate of completion</li>
+            <li><span class="feat-icon feat-x">✗</span><span class="feat-disabled">Spring / Servlets access</span></li>
+            <li><span class="feat-icon feat-x">✗</span><span class="feat-disabled">AI integration modules</span></li>
+          </ul>
+          <button class="plan-btn plan-btn-outline">Enroll in Java Core</button>
+        </div>
+
+        <!-- ===== Pro (Featured) — Java + Spring ===== -->
+        <div class="plan-card featured reveal reveal-delay-2">
+          <div class="plan-badge-top">Most Popular</div>
+          <div class="plan-name">Professional</div>
+          <div class="plan-title">Java + Spring</div>
+          <div class="plan-price">
+            <span class="price-currency">₹</span>
+            <span class="price-num" data-monthly="8,999" data-yearly="6,299">8,999</span>
+            <span class="price-period">/month</span>
+          </div>
+          <p class="plan-desc">The complete enterprise Java stack. Servlets to Spring Boot REST APIs. This is what
+            companies hire for.</p>
+          <div class="plan-divider"></div>
+          <ul class="plan-features">
+            <li><span class="feat-icon">✓</span>Everything in Java Core</li>
+            <li><span class="feat-icon">✓</span>Java Advanced (streams, threads, JVM)</li>
+            <li><span class="feat-icon">✓</span>Servlets & JSP deep dive</li>
+            <li><span class="feat-icon">✓</span>Spring Boot REST API development</li>
+            <li><span class="feat-icon">✓</span>MySQL + JPA/Hibernate integration</li>
+            <li><span class="feat-icon">✓</span>5 real-world projects on GitHub</li>
+            <li><span class="feat-icon">✓</span>Mock interviews + resume review</li>
+          </ul>
+          <button class="plan-btn plan-btn-fill">Enroll in Java + Spring</button>
+        </div>
+
+        <!-- ===== Elite — Java + AI ===== -->
+        <div class="plan-card reveal reveal-delay-3">
+          <div class="plan-name">Elite</div>
+          <div class="plan-title">Java + AI</div>
+          <div class="plan-price">
+            <span class="price-currency">₹</span>
+            <span class="price-num" data-monthly="12,999" data-yearly="9,099">12,999</span>
+            <span class="price-period">/month</span>
+          </div>
+          <p class="plan-desc">The future-ready track. Full Spring stack + AI API integrations, LLM-powered apps, and
+            deployment.</p>
+          <div class="plan-divider"></div>
+          <ul class="plan-features">
+            <li><span class="feat-icon">✓</span>Everything in Java + Spring</li>
+            <li><span class="feat-icon">✓</span>AI / ML concepts for Java devs</li>
+            <li><span class="feat-icon">✓</span>OpenAI & Gemini API integration</li>
+            <li><span class="feat-icon">✓</span>Build LLM-powered REST services</li>
+            <li><span class="feat-icon">✓</span>Docker & cloud deployment basics</li>
+            <li><span class="feat-icon">✓</span>8+ projects including AI capstone</li>
+            <li><span class="feat-icon">✓</span>Priority 1-on-1 mentoring</li>
+          </ul>
+          <button class="plan-btn plan-btn-gold">Enroll in Java + AI</button>
+        </div>
+      </div>
+
+      <!-- ===== Curriculum Modules ===== -->
+      <div class="modules-section">
+        <h2>What's inside each course</h2>
+        <div class="module-tabs">
+          <button class="mod-tab active" data-tab="core">Java Core</button>
+          <button class="mod-tab" data-tab="advanced">Java Advanced</button>
+          <button class="mod-tab" data-tab="spring">Servlet + Spring</button>
+          <button class="mod-tab" data-tab="ai">Java + AI</button>
+        </div>
+
+        <div id="tab-core" class="module-content active">
+          <div class="module-list">
+            <div class="module-item"><span class="mod-num">01</span><span class="mod-title">Java Environment Setup &
+                Hello World</span><span class="mod-tag mod-free">Free</span></div>
+            <div class="module-item"><span class="mod-num">02</span><span class="mod-title">Data Types, Variables &
+                Operators</span><span class="mod-tag">Core</span></div>
+            <div class="module-item"><span class="mod-num">03</span><span class="mod-title">Control Flow: Loops &
+                Conditionals</span><span class="mod-tag">Core</span></div>
+            <div class="module-item"><span class="mod-num">04</span><span class="mod-title">OOP: Classes, Objects,
+                Inheritance</span><span class="mod-tag">Core</span></div>
+            <div class="module-item"><span class="mod-num">05</span><span class="mod-title">Interfaces, Abstract Classes
+                & Polymorphism</span><span class="mod-tag">Core</span></div>
+            <div class="module-item"><span class="mod-num">06</span><span class="mod-title">Collections Framework (List,
+                Map, Set)</span><span class="mod-tag">Core</span></div>
+            <div class="module-item"><span class="mod-num">07</span><span class="mod-title">Exception Handling & Custom
+                Exceptions</span><span class="mod-tag">Core</span></div>
+            <div class="module-item"><span class="mod-num">08</span><span class="mod-title">File I/O &
+                Serialization</span><span class="mod-tag">Core</span></div>
+            <div class="module-item"><span class="mod-num">09</span><span class="mod-title">Mini Project: Student
+                Management System</span><span class="mod-tag mod-project">Project</span></div>
+          </div>
+        </div>
+
+        <div id="tab-advanced" class="module-content">
+          <div class="module-list">
+            <div class="module-item"><span class="mod-num">01</span><span class="mod-title">Generics & Bounded Type
+                Parameters</span><span class="mod-tag">Advanced</span></div>
+            <div class="module-item"><span class="mod-num">02</span><span class="mod-title">Lambda Expressions &
+                Functional Interfaces</span><span class="mod-tag">Advanced</span></div>
+            <div class="module-item"><span class="mod-num">03</span><span class="mod-title">Java Streams API — Deep
+                Dive</span><span class="mod-tag">Advanced</span></div>
+            <div class="module-item"><span class="mod-num">04</span><span class="mod-title">Multithreading & Concurrency
+                Basics</span><span class="mod-tag">Advanced</span></div>
+            <div class="module-item"><span class="mod-num">05</span><span class="mod-title">CompletableFuture & Async
+                Java</span><span class="mod-tag">Advanced</span></div>
+            <div class="module-item"><span class="mod-num">06</span><span class="mod-title">JVM Internals: Memory &
+                GC</span><span class="mod-tag">Advanced</span></div>
+            <div class="module-item"><span class="mod-num">07</span><span class="mod-title">Design Patterns in
+                Java</span><span class="mod-tag">Advanced</span></div>
+            <div class="module-item"><span class="mod-num">08</span><span class="mod-title">Project: Concurrent File
+                Processor</span><span class="mod-tag mod-project">Project</span></div>
+          </div>
+        </div>
+
+        <div id="tab-spring" class="module-content">
+          <div class="module-list">
+            <div class="module-item"><span class="mod-num">01</span><span class="mod-title">Servlet Lifecycle & HTTP
+                Request Handling</span><span class="mod-tag">Servlet</span></div>
+            <div class="module-item"><span class="mod-num">02</span><span class="mod-title">JSP, EL & JSTL
+                Templating</span><span class="mod-tag">Servlet</span></div>
+            <div class="module-item"><span class="mod-num">03</span><span class="mod-title">Spring Core: IoC, DI & Bean
+                Management</span><span class="mod-tag mod-spring">Spring</span></div>
+            <div class="module-item"><span class="mod-num">04</span><span class="mod-title">Spring MVC
+                Architecture</span><span class="mod-tag mod-spring">Spring</span></div>
+            <div class="module-item"><span class="mod-num">05</span><span class="mod-title">Spring Boot
+                Auto-configuration</span><span class="mod-tag mod-spring">Spring</span></div>
+            <div class="module-item"><span class="mod-num">06</span><span class="mod-title">REST APIs with Spring
+                Boot</span><span class="mod-tag mod-spring">Spring</span></div>
+            <div class="module-item"><span class="mod-num">07</span><span class="mod-title">JPA, Hibernate & MySQL
+                Integration</span><span class="mod-tag mod-spring">Spring</span></div>
+            <div class="module-item"><span class="mod-num">08</span><span class="mod-title">Spring Security & JWT
+                Auth</span><span class="mod-tag mod-spring">Spring</span></div>
+            <div class="module-item"><span class="mod-num">09</span><span class="mod-title">Capstone: Full E-commerce
+                REST API</span><span class="mod-tag mod-project">Project</span></div>
+          </div>
+        </div>
+
+        <div id="tab-ai" class="module-content">
+          <div class="module-list">
+            <div class="module-item"><span class="mod-num">01</span><span class="mod-title">AI/ML Fundamentals for Java
+                Developers</span><span class="mod-tag mod-ai">AI</span></div>
+            <div class="module-item"><span class="mod-num">02</span><span class="mod-title">REST Clients & Third-party
+                API Integration</span><span class="mod-tag mod-ai">AI</span></div>
+            <div class="module-item"><span class="mod-num">03</span><span class="mod-title">OpenAI API with Java — Text,
+                Vision, Audio</span><span class="mod-tag mod-ai">AI</span></div>
+            <div class="module-item"><span class="mod-num">04</span><span class="mod-title">Google Gemini API
+                Integration in Spring Boot</span><span class="mod-tag mod-ai">AI</span></div>
+            <div class="module-item"><span class="mod-num">05</span><span class="mod-title">RAG (Retrieval-Augmented
+                Generation) in Java</span><span class="mod-tag mod-ai">AI</span></div>
+            <div class="module-item"><span class="mod-num">06</span><span class="mod-title">Vector Databases: Pinecone +
+                Java</span><span class="mod-tag mod-ai">AI</span></div>
+            <div class="module-item"><span class="mod-num">07</span><span class="mod-title">Dockerizing & Deploying
+                AI-Powered APIs</span><span class="mod-tag">Deploy</span></div>
+            <div class="module-item"><span class="mod-num">08</span><span class="mod-title">Capstone: AI Chatbot with
+                Spring Boot + LLM</span><span class="mod-tag mod-project">Project</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== FAQ ===== -->
+      <div class="faq-section">
+        <h2>Common questions</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-item__question">
+              <span>Do I need prior coding experience to join?</span>
+              <span class="faq-item__icon">▼</span>
+            </button>
+            <div class="faq-item__answer">
+              <div class="faq-item__answer-inner">Not at all! Java Core is designed for absolute beginners. If you can
+                use a computer and have the will to learn, you're ready. We start from the very basics and build up
+                systematically.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-item__question">
+              <span>Are the classes live or pre-recorded?</span>
+              <span class="faq-item__icon">▼</span>
+            </button>
+            <div class="faq-item__answer">
+              <div class="faq-item__answer-inner">All sessions are live on weekdays, with recordings available for 30
+                days after each session. We find live sessions significantly better for learning because you can ask
+                questions in real time.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-item__question">
+              <span>What's the class schedule like?</span>
+              <span class="faq-item__icon">▼</span>
+            </button>
+            <div class="faq-item__answer">
+              <div class="faq-item__answer-inner">Classes run Monday to Friday, 7–9 PM IST. Weekend slots are also
+                available for working professionals. You'll also get access to two doubt-clearing sessions per week.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-item__question">
+              <span>Is the certificate industry-recognized?</span>
+              <span class="faq-item__icon">▼</span>
+            </button>
+            <div class="faq-item__answer">
+              <div class="faq-item__answer-inner">Our certificates are issued by Interface Software Academy and
+                recognized by our placement partners. More importantly, your GitHub portfolio of real projects is what
+                companies actually evaluate — that's where our focus lies.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-item__question">
+              <span>Can I upgrade my plan later?</span>
+              <span class="faq-item__icon">▼</span>
+            </button>
+            <div class="faq-item__answer">
+              <div class="faq-item__answer-inner">Yes! You can upgrade from Java Core to any higher plan at any time.
+                The fees are adjusted pro-rata, and your progress carries over seamlessly.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__logo">
+            <div class="footer__logo-icon">ISA</div>
+            Interface Software
+          </div>
+          <p class="footer__brand-desc">
+            Odisha's premier software training academy since 2001. We build careers through industry-focused Java
+            training and cutting-edge technology education.
+          </p>
+          <div class="footer__social">
+            <a href="https://www.facebook.com/InterfaceSoftware/" target="_blank" class="footer__social-link"
+              aria-label="Facebook">📘</a>
+            <a href="#" class="footer__social-link" aria-label="LinkedIn">💼</a>
+            <a href="#" class="footer__social-link" aria-label="Twitter">🐦</a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">▶️</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Quick Links</h4>
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="about.html" class="footer__link">About Us</a>
+          <a href="courses.html" class="footer__link">Courses</a>
+          <a href="#" class="footer__link">Blog</a>
+          <a href="index.html#contact" class="footer__link">Contact</a>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Courses</h4>
+          <a href="courses.html" class="footer__link">Java Core</a>
+          <a href="courses.html" class="footer__link">Java + Spring</a>
+          <a href="courses.html" class="footer__link">Java + AI</a>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Contact Us</h4>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">📍</span>
+            <span>A/83, Saheed Nagar, Infront of DDCE (Utkal University), Bhubaneswar, Odisha — 751007</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">📞</span>
+            <span>+91 674 329 8147</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">✉️</span>
+            <span>hr@infaso.in</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2001–2026 Interface Software Academy. All rights reserved.</p>
+        <p>Founded by Mr. P.K. Dixit</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
