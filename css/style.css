@@ -181,97 +181,206 @@ h1, h2, h3, h4, h5, h6 {
 /* ============================================
    UNIVERSAL BUTTON
    ============================================ */
+/* ── Animated Pill Button (Uiverse-inspired) ── */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-sm);
-  padding: 14px 32px;
+  gap: 0.4rem;
+  padding: 10px 22px;
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  border: 2px solid transparent;
-  border-radius: var(--radius-md);
+  border: 2px solid var(--gray-200);
+  border-radius: 9999px;
   cursor: pointer;
-  transition: all var(--transition-base);
   position: relative;
   overflow: hidden;
+  z-index: 1;
   white-space: nowrap;
   letter-spacing: 0.01em;
+  background: var(--gray-50, #f9fafb);
+  color: var(--gray-800, #1f2937);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+  text-decoration: none;
+  transition: color 0.4s ease, border-color 0.4s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
+/* Expanding circle on hover */
 .btn::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: -100%;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  transition: left 0.5s ease;
+  aspect-ratio: 1 / 1;
+  top: 50%;
+  left: -100%;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  background: #10b981; /* emerald-500 */
+  z-index: -1;
+  transition: left 0.7s ease, transform 0s 0.7s;
 }
 
 .btn:hover::before {
-  left: 100%;
+  left: 0;
+  transform: translateY(-50%) scale(1.5);
+  transition: left 0.7s ease, transform 0.7s ease;
 }
 
+.btn:hover {
+  color: #fff;
+  border-color: #10b981;
+  box-shadow: 0 8px 28px rgba(16, 185, 129, 0.35);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* Arrow icon inside a circle */
+.btn__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gray-700, #374151);
+  padding: 5px;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.btn__arrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+.btn__arrow svg path {
+  fill: var(--gray-800, #1f2937);
+  transition: fill 0.3s ease;
+}
+
+.btn:hover .btn__arrow {
+  transform: rotate(90deg);
+  background: #fff;
+  border-color: transparent;
+}
+
+.btn:hover .btn__arrow svg path {
+  fill: var(--gray-800, #1f2937);
+}
+
+/* ── Variant: Primary (emerald expand) ── */
 .btn--primary {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-  color: var(--white);
-  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
+  background: var(--gray-50, #f9fafb);
+  color: var(--gray-800, #1f2937);
+  border-color: var(--gray-200);
+}
+
+.btn--primary::before {
+  background: #10b981;
 }
 
 .btn--primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(108, 99, 255, 0.4);
+  color: #fff;
+  border-color: #10b981;
+  box-shadow: 0 8px 28px rgba(16, 185, 129, 0.35);
 }
 
-.btn--primary:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 10px rgba(108, 99, 255, 0.3);
-}
-
+/* ── Variant: Outline (emerald expand) ── */
 .btn--outline {
   background: transparent;
-  color: var(--primary);
-  border-color: var(--primary);
+  color: var(--gray-800, #1f2937);
+  border-color: var(--gray-300, #d1d5db);
+}
+
+.btn--outline::before {
+  background: #10b981;
 }
 
 .btn--outline:hover {
-  background: var(--primary);
-  color: var(--white);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(108, 99, 255, 0.3);
+  color: #fff;
+  border-color: #10b981;
+  box-shadow: 0 8px 28px rgba(16, 185, 129, 0.3);
 }
 
+.btn--outline .btn__arrow {
+  border-color: var(--gray-700, #374151);
+}
+
+.btn--outline .btn__arrow svg path {
+  fill: var(--gray-800, #1f2937);
+}
+
+/* ── Variant: Secondary (simple dark/grey, no animation) ── */
+.btn--secondary {
+  background: var(--gray-800, #1f2937);
+  color: #fff;
+  border-color: var(--gray-800, #1f2937);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.btn--secondary::before {
+  display: none;
+}
+
+.btn--secondary:hover {
+  background: var(--gray-700, #374151);
+  color: #fff;
+  border-color: var(--gray-700, #374151);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  transform: translateY(-1px);
+}
+
+.btn--secondary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* ── Variant: White (for dark backgrounds) ── */
 .btn--white {
-  background: var(--white);
-  color: var(--primary);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--gray-800, #1f2937);
+  border-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+}
+
+.btn--white::before {
+  background: #10b981;
 }
 
 .btn--white:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  color: #fff;
+  border-color: #10b981;
+  box-shadow: 0 8px 28px rgba(16, 185, 129, 0.35);
 }
 
+/* ── Size modifiers ── */
 .btn--large {
-  padding: 16px 40px;
-  font-size: 1.05rem;
+  padding: 12px 28px;
+  font-size: 0.95rem;
+}
+
+.btn--large .btn__arrow {
+  width: 28px;
+  height: 28px;
 }
 
 .btn--small {
-  padding: 10px 22px;
-  font-size: 0.85rem;
+  padding: 7px 16px;
+  font-size: 0.8rem;
+  gap: 0.3rem;
+}
+
+.btn--small .btn__arrow {
+  width: 22px;
+  height: 22px;
+  padding: 3px;
 }
 
 .btn--full {
   width: 100%;
-}
-
-.btn--icon svg {
-  width: 18px;
-  height: 18px;
 }
 
 
@@ -2094,71 +2203,149 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ---- Plan Buttons ---- */
+/* ── Plan Card Animated Pill Button ── */
 .plan-btn {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0.4rem;
   width: 100%;
-  padding: 14px 24px;
+  padding: 10px 22px;
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  border: 2px solid transparent;
-  border-radius: var(--radius-md);
+  border: 2px solid var(--gray-200);
+  border-radius: 9999px;
   cursor: pointer;
-  transition: all var(--transition-base);
   position: relative;
   overflow: hidden;
+  z-index: 1;
+  background: var(--gray-50, #f9fafb);
+  color: var(--gray-800, #1f2937);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  transition: color 0.4s ease, border-color 0.4s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .plan-btn::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: -100%;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  transition: left 0.5s ease;
+  aspect-ratio: 1 / 1;
+  top: 50%;
+  left: -100%;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  background: var(--gray-800, #1f2937);
+  z-index: -1;
+  transition: left 0.7s ease, transform 0s 0.7s;
 }
 
 .plan-btn:hover::before {
-  left: 100%;
+  left: 0;
+  transform: translateY(-50%) scale(1.5);
+  transition: left 0.7s ease, transform 0.7s ease;
 }
 
+.plan-btn:hover {
+  color: #fff;
+  border-color: var(--gray-800, #1f2937);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+}
+
+.plan-btn:active {
+  transform: scale(0.97);
+}
+
+.plan-btn .plan-btn__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gray-700, #374151);
+  padding: 4px;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.plan-btn .plan-btn__arrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+.plan-btn .plan-btn__arrow svg path {
+  fill: var(--gray-800, #1f2937);
+  transition: fill 0.3s ease;
+}
+
+.plan-btn:hover .plan-btn__arrow {
+  transform: rotate(90deg);
+  background: #fff;
+  border-color: transparent;
+}
+
+.plan-btn:hover .plan-btn__arrow svg path {
+  fill: var(--gray-800, #1f2937);
+}
+
+/* ── Outline variant (dark hover) ── */
 .plan-btn-outline {
   background: transparent;
-  color: var(--primary);
-  border-color: var(--primary);
+  color: var(--gray-800, #1f2937);
+  border-color: var(--gray-300, #d1d5db);
+}
+
+.plan-btn-outline::before {
+  background: var(--gray-800, #1f2937);
 }
 
 .plan-btn-outline:hover {
-  background: var(--primary);
-  color: var(--white);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(108, 99, 255, 0.3);
+  color: #fff;
+  border-color: var(--gray-800, #1f2937);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
 }
 
+.plan-btn-outline .plan-btn__arrow {
+  border-color: var(--gray-700, #374151);
+}
+
+.plan-btn-outline .plan-btn__arrow svg path {
+  fill: var(--gray-800, #1f2937);
+}
+
+/* ── Fill variant (dark hover) ── */
 .plan-btn-fill {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  color: var(--white);
-  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
+  background: var(--gray-50, #f9fafb);
+  color: var(--gray-800, #1f2937);
+  border-color: var(--gray-200);
+}
+
+.plan-btn-fill::before {
+  background: var(--gray-800, #1f2937);
 }
 
 .plan-btn-fill:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(108, 99, 255, 0.4);
+  color: #fff;
+  border-color: var(--gray-800, #1f2937);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
 }
 
+/* ── Gold variant (dark hover) ── */
 .plan-btn-gold {
-  background: linear-gradient(135deg, #F59E0B, #D97706);
-  color: var(--white);
-  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+  background: var(--gray-50, #f9fafb);
+  color: var(--gray-800, #1f2937);
+  border-color: var(--gray-200);
+}
+
+.plan-btn-gold::before {
+  background: var(--gray-800, #1f2937);
 }
 
 .plan-btn-gold:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+  color: #fff;
+  border-color: var(--gray-800, #1f2937);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
 }
 
 
